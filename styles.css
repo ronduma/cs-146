@@ -25,10 +25,16 @@ body {
   width: 75%;
 }
 
-.header {
+a.header {
   font-family: 'Oswald', sans-serif;
   color:#3c9b43;
+  text-decoration:none;
 }
+a.header:visited {
+  color:#3c9b43;
+  text-decoration:none;
+}
+
 
 /* breakdown.html */
 .breakdownGrid{
@@ -43,4 +49,9 @@ body {
 
 .buttonGroup{
   margin:5px;
+}
+
+/* result.html */
+.result{
+  margin:10px;
 }
