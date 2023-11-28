@@ -1,0 +1,46 @@
+/* fonts */
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@500&family=Roboto:wght@300&display=swap');
+
+/* all pages */
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
+.button {
+  border: none;
+  cursor: pointer;
+  margin: 5px;
+  padding: 5px;
+  text-decoration:none;
+}
+
+.submitButton {
+  background-color:#239f2b;
+  color: #ffffff;
+}
+
+.center {
+  margin: auto;
+  text-align: center;
+  width: 75%;
+}
+
+.header {
+  font-family: 'Oswald', sans-serif;
+  color:#3c9b43;
+}
+
+/* breakdown.html */
+.breakdownGrid{
+  display:grid;
+  grid-template-columns: auto auto auto;
+  margin:5px;
+}
+
+.breakdownGridItem{
+  border: 1px solid;
+}
+
+.buttonGroup{
+  margin:5px;
+}
