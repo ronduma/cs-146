@@ -1,35 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Broke Splitter</title>
-        <link rel="stylesheet" href="styles.css" />
-    </head>
-    <body class="center">
-        <a href="index.html" class="header">
-            <h1>Broke Splitter</h1>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Broke Splitter</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="center">
+    <a href="index.html" class="header">
+      <h1>Broke Splitter</h1>
+    </a>
+    <div>Welcome to Broke Splitter. Select how you would like to split your bill, and which U.S. state you are currently in to begin.</div>
+    <hr>
+    <div>
+      <form>
+        <label for="splitType">Split Type:</label>
+        <select id="types" name="types">
+          <option value="Even">Even</option>
+          <option value="ByMeal">By Meal</option>
+          <option value="Percentage">Percentage</option>
+        </select>
+        <label for="states">Choose a State:</label>
+        <select id="states" name="states">
+          <option value="None">None</option>
+        </select>
+        <a href="breakdown.html" class="button submitButton">
+          Submit
         </a>
-        <div>Welcome to Broke Splitter. Select how you would like to split your bill, and which U.S. state you are currently in to begin.</div>
-        <hr>
-        <div>
-            <form>
-                <label for="splitType">Split Type:</label>
-                <select id="types" name="types">
-                    <option value="Even">Even</option>
-                    <option value="ByMeal">By Meal</option>
-                    <option value="Percentage">Percentage</option>
-                </select>
-                <label for="states">Choose a State:</label>
-                <select id="states" name="states">
-                    <option value="None">None</option>
-                </select>
-                <a href="breakdown.html" class="button submitButton">
-                    Submit
-                    <!-- <input type="submit" value="Submit"> -->
-                </a>
-            </form>
-        </div>
-        <!-- <script src="indexScript.js"></script> -->
-    </body>
+      </form>
+    </div>
+  </body>
 </html>
