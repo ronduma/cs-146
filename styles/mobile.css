@@ -1,0 +1,28 @@
+@media only screen and (max-width: 480px)
+{ 
+  /* all pages */
+  form > div {
+    display: block;
+  }
+
+  h1 {
+    font-size: 3.25em;
+  }
+
+  .center {
+    margin: auto;
+    text-align: center;
+    width: 70%;
+  }
+
+  .container{
+    display: flex;
+    flex-direction: column;
+    font-size: 3vh;
+    margin: 4vh 0 4vh 0;
+  }
+
+  .formElement{
+    margin: 7.5px;
+  }
+}

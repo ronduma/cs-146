@@ -1,32 +1,57 @@
+<!--
+  Group 7
+  Ron Dumalagan, Himmat Garcha, Michael Lamaze, Shannon Nicole Dinio
+  I pledge my honor that I have abided by the Stevens Honor System.
+-->
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Broke Splitter</title>
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="./styles/styles.css" />
+    <link rel="stylesheet" href="./styles/mobile.css" media="screen and (max-width:480px)" />
+    <link rel="stylesheet" href="./styles/tablet.css" media="screen and (min-width:481px)
+    and (max-width:768px)" />
+    <link rel="stylesheet" href="./styles/desktop.css" media="screen and (min-width: 769px)"/>
   </head>
   <body class="center">
     <a href="index.html" class="header">
       <h1>Broke Splitter</h1>
     </a>
-    <div>Welcome to Broke Splitter. Select how you would like to split your bill, and which U.S. state you are currently in to begin.</div>
+    <div class="imgContainer">
+      <img src="./images/bill.jpg"/>
+    </div>
+    <div class="container">
+      Welcome to Broke Splitter. Select how you would like to split your bill, and which U.S. state you are currently in to begin.
+    </div>
     <hr>
     <div>
-      <form>
-        <label for="splitType">Split Type:</label>
-        <select id="types" name="types">
-          <option value="Even">Even</option>
-          <option value="ByMeal">By Meal</option>
-          <option value="Percentage">Percentage</option>
-        </select>
-        <label for="states">Choose a State:</label>
-        <select id="states" name="states">
-          <option value="None">None</option>
-        </select>
-        <a href="breakdown.html" class="button submitButton">
-          Submit
-        </a>
+      <form class="container">
+        <div class="formElement">
+          <label for="splitType">Split Type:</label>
+        </div>
+        <div class="formElement">
+          <select id="types" name="types">
+            <option value="Even">Even</option>
+            <option value="ByMeal">By Meal</option>
+            <option value="Percentage">Percentage</option>
+          </select>
+        </div>
+        <div class="formElement">
+          <label for="states">Choose a State:</label>
+        </div>
+        <div class="formElement">
+          <select id="states" name="states">
+            <option value="None">None</option>
+          </select>
+        </div>
+        <div class="formElement">
+          <a href="breakdown.html" class="button submitButton">
+            Submit
+          </a>
+        </div>
       </form>
     </div>
   </body>
