@@ -1,0 +1,28 @@
+@media only screen and (min-width: 481px)
+{ 
+  /* all pages */
+  form > div {
+    display: block;
+  }
+
+  h1 {
+    font-size: 3em;
+  }
+
+  .center {
+    margin: auto;
+    text-align: center;
+    width: 75%;
+  }
+
+  .container{
+    display: flex;
+    flex-direction: column;
+    font-size: 2.75vh;
+    margin: 4vh 0 4vh 0;
+  }
+
+  .formElement{
+    margin: 7.5px;
+  }
+}

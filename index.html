@@ -1,60 +1,57 @@
+<!--
+  Group 7
+  Ron Dumalagan, Himmat Garcha, Michael Lamaze, Shannon Nicole Dinio
+  I pledge my honor that I have abided by the Stevens Honor System.
+-->
+
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Broke Splitter</title>
-    <style>
-
-    </style>
-</head>
-
-<body>
-    <h1>Broke Splitter</h1>
-    <img src="./images/bill.jpg"/>
-    <div>Welcome to Broke Splitter. Select how you would like to split your bill, and which U.S. state you are currently in to begin.</div>
+    <link rel="stylesheet" href="./styles/styles.css" />
+    <link rel="stylesheet" href="./styles/mobile.css" media="screen and (max-width:480px)" />
+    <link rel="stylesheet" href="./styles/tablet.css" media="screen and (min-width:481px)
+    and (max-width:768px)" />
+    <link rel="stylesheet" href="./styles/desktop.css" media="screen and (min-width: 769px)"/>
+  </head>
+  <body class="center">
+    <a href="index.html" class="header">
+      <h1>Broke Splitter</h1>
+    </a>
+    <div class="imgContainer">
+      <img src="./images/bill.jpg"/>
+    </div>
+    <div class="container">
+      Welcome to Broke Splitter. Select how you would like to split your bill, and which U.S. state you are currently in to begin.
+    </div>
     <hr>
     <div>
-        <form>
-            <label for="splitType">Split Type:</label>
-            <select id="types" name="types">
-                <option value="Even">Even</option>
-                <option value="ByMeal">By Meal</option>
-                <option value="Percentage">Percentage</option>
-            </select>
-            <label for="states">Choose a State:</label>
-            <select id="states" name="states">
-            </select>
-            <input type="submit" value="Submit">
-        </form>
+      <form class="container">
+        <div class="formElement">
+          <label for="splitType">Split Type:</label>
+        </div>
+        <div class="formElement">
+          <select id="types" name="types">
+            <option value="Even">Even</option>
+            <option value="ByMeal">By Meal</option>
+            <option value="Percentage">Percentage</option>
+          </select>
+        </div>
+        <div class="formElement">
+          <label for="states">Choose a State:</label>
+        </div>
+        <div class="formElement">
+          <select id="states" name="states">
+            <option value="None">None</option>
+          </select>
+        </div>
+        <div class="formElement">
+          <a href="breakdown.html" class="button submitButton">
+            Submit
+          </a>
+        </div>
+      </form>
     </div>
-    <div>
-        <form>
-            
-    </div>
-    <script>
-        var states = [
-            "Select State", "Alabama", "Alaska", "Arizona", "Arkansas", "California", "Colorado", "Connecticut", "Delaware",
-            "Florida", "Georgia", "Hawaii", "Idaho", "Illinois", "Indiana", "Iowa", "Kansas", "Kentucky", "Louisiana",
-            "Maine", "Maryland", "Massachusetts", "Michigan", "Minnesota", "Mississippi", "Missouri", "Montana", "Nebraska",
-            "Nevada", "New Hampshire", "New Jersey", "New Mexico", "New York", "North Carolina", "North Dakota", "Ohio",
-            "Oklahoma", "Oregon", "Pennsylvania", "Rhode Island", "South Carolina", "South Dakota", "Tennessee", "Texas",
-            "Utah", "Vermont", "Virginia", "Washington", "West Virginia", "Wisconsin", "Wyoming"
-        ];
-        var statesDropdown = document.getElementById("states");
-        states.forEach(function(state) {
-            var option = document.createElement("option");
-            option.value = state;
-            option.text = state;
-            statesDropdown.appendChild(option);
-        });
-        var form = document.getElementById("splitForm");
-        form.addEventListener("submit", function(event) {
-            event.preventDefault();
-        });
-    </script>
-    <script src="script.js"></script>
-</body>
-
 </html>
