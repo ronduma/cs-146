@@ -43,6 +43,17 @@ img {
 }
 
 /* breakdown.html */
+table {
+  margin: 2em 0 2em 0;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  padding: 8px;
+  text-align: center;
+}
+
 .breakdownGrid{
   display:grid;
   grid-template-columns: auto auto auto;
@@ -55,6 +66,10 @@ img {
 
 .buttonGroup{
   margin:5px;
+}
+
+.container.peopleList{
+  display:none
 }
 
 /* result.html */

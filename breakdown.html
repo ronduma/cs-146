@@ -16,31 +16,34 @@
       <h1>Broke Splitter</h1>
     </a>
     <div class="container">
-      <span>
+      <div>
         Breakdown Type: <span id="breakdown">null</span>
-      </span>
-      <span>
+      </div>
+      <div>
         State: <span id="state">null</span>
-      </span>
+      </div>
     </div>
     <div class="buttonGroup container">
-      <button class="button">Add Person</button>
-      <button class="button">Add Item</button>
+      <button class="button" onclick="togglePeopleList()">Add Person</button>
+      <button class="button" onclick="addItem()">Add Item</button>
       <button class="button">Add Tip</button>
       <a href="result.html" class="button submitButton">
         Submit
       </a>
     </div>
-    <div class="breakdownGrid">
-      <div class="breakdownGridItem"> 
-        Item Name 
-      </div>
-      <div class="breakdownGridItem"> 
-        Price 
-      </div>
-      <div class="breakdownGridItem"> 
-        Person
-      </div>
+    <div class="container peopleList">
+      <label for="people">People List:</label>
+      <input id="people" name="people" type="text"/>
+      <button class="button submitButton" onclick="updateList()">Save</button>
     </div>
+    <table id="myTable">
+      <tr>
+        <th></th>
+        <th>Item Name</th>
+        <th>Price</th>
+        <th>Person</th>
+      </tr>
+    </table>
+    <script src="./scripts/breakdown.js" defer></script>
   </body>
 </html>

@@ -28,30 +28,32 @@
     </div>
     <hr>
     <div>
-      <form class="container">
+      <form class="container" action="breakdown.html" method="GET">
         <div class="formElement">
-          <label for="splitType">Split Type:</label>
+          <label for="type">Split Type:</label>
         </div>
         <div class="formElement">
-          <select id="types" name="types">
+          <select id="type" name="type">
             <option value="Even">Even</option>
-            <option value="ByMeal">By Meal</option>
+            <option value="By Meal">By Meal</option>
             <option value="Percentage">Percentage</option>
           </select>
         </div>
         <div class="formElement">
-          <label for="states">Choose a State:</label>
+          <label for="state">Choose a State:</label>
         </div>
         <div class="formElement">
-          <select id="states" name="states">
+          <select id="state" name="state">
             <option value="None">None</option>
           </select>
         </div>
         <div class="formElement">
-          <a href="breakdown.html" class="button submitButton">
+          <a href="#" onclick="prepareDataAndSubmit()" class="button submitButton">
             Submit
           </a>
         </div>
       </form>
     </div>
+    <script src="./scripts/index.js" defer></script>
+  </body>
 </html>
