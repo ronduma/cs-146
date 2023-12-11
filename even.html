@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Broke Splitter</title>
+    <link rel="icon" type="image/x-icon" href="./favicon.ico">
     <link rel="stylesheet" href="./styles/styles.css" />
     <link rel="stylesheet" href="./styles/mobile.css" media="screen and (max-width:480px)" />
     <link rel="stylesheet" href="./styles/tablet.css" media="screen and (min-width:481px)
@@ -24,26 +25,30 @@
       </div>
     </div>
     <div class="buttonGroup container">
-      <button class="button" onclick="togglePeopleList()">Add Person</button>
-      <button class="button" onclick="addItem()">Add Item</button>
-      <button class="button">Add Tip</button>
-      <a href="result.html" class="button submitButton">
+      <button class="button" id="addPersonBtn">Add Person</button>
+      <button class="button" id="addItemBtn">Add Item</button>
+      <button class="button" id="addTipBtn">Add Tip</button>
+      <a href="./result.html" id="submitBtn" class="button submitButton">
         Submit
       </a>
     </div>
     <div class="container peopleList">
       <label for="people">People List:</label>
       <input id="people" name="people" type="text"/>
-      <button class="button submitButton" onclick="updateList()">Save</button>
+      <button class="button submitButton" id="savePeopleBtn">Save</button>
     </div>
-    <table id="myTable">
+    <div class="container addTip">
+      <label for="tip">Add Tip:</label>
+      <input id="tip" name="tip" type="number"/>
+      <button class="button submitButton" id="saveTipBtn">Save</button>
+    </div>
+    <table id="table">
       <tr>
         <th></th>
         <th>Item Name</th>
-        <th>Price</th>
-        <th>Person</th>
+        <th>Price ($)</th>
       </tr>
     </table>
-    <script src="./scripts/breakdown.js" defer></script>
+    <script type="module" src="./scripts/even.js" defer></script>
   </body>
 </html>
