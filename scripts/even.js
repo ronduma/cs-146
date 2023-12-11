@@ -85,7 +85,13 @@ function addItem() {
   let cell3 = newRow.insertCell(2);
 
   // Set content for the cells (you can replace these with your actual values)
-  cell1.textContent = ''; // Empty first cell
+  let deleteButton = document.createElement('button');
+  deleteButton.textContent = 'Delete';
+  deleteButton.addEventListener('click', function() {
+    let row = this.parentNode.parentNode; // Get the parent row of the clicked button
+    row.parentNode.removeChild(row); // Remove the row
+  });
+  cell1.appendChild(deleteButton); // Append the button to the cell
   cell2.appendChild(createInput('text', 'itemName', itemCount)); // Text input for Item Name
   cell3.appendChild(createInput('number', 'price', itemCount)); // Text input for Price
 }
@@ -119,7 +125,8 @@ function even(){
   let tax = getTaxRate(state);
   total *= tax;
   total += tip;
-  total /= getPeople().length.toFixed(2);
+  total /= getPeople().length;
+  total = total.toFixed(2);
   localStorage.setItem('total', total);
   localStorage.setItem('splitType', "Even");
   window.location.href = './result.html';

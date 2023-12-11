@@ -87,7 +87,13 @@ function addItem() {
   let cell4 = newRow.insertCell(3);
 
   // Set content for the cells (you can replace these with your actual values)
-  cell1.textContent = ''; // Empty first cell
+  let deleteButton = document.createElement('button');
+  deleteButton.textContent = 'Delete';
+  deleteButton.addEventListener('click', function() {
+    let row = this.parentNode.parentNode; // Get the parent row of the clicked button
+    row.parentNode.removeChild(row); // Remove the row
+  });
+  cell1.appendChild(deleteButton); // Append the button to the cell
   cell2.appendChild(createInput('text', 'itemName', itemCount)); // Text input for Item Name
   cell3.appendChild(createInput('number', 'price', itemCount)); // Text input for Price
   cell4.appendChild(createDropdown('dropdown', itemCount)); // Text input for Person
@@ -157,7 +163,7 @@ function loopTable(){
   return values;
 }
 
-function byPerson(){
+function byMeal(){
   let values = loopTable();
   let tip = getTip();
   let personMap = {};
@@ -186,6 +192,6 @@ function byPerson(){
 document.getElementById('addPersonBtn').addEventListener('click', togglePeopleList);
 document.getElementById('addItemBtn').addEventListener('click', addItem);
 document.getElementById('addTipBtn').addEventListener('click', toggleTip);
-document.getElementById('submitBtn').addEventListener('click', byPerson);
+document.getElementById('submitBtn').addEventListener('click', byMeal);
 document.getElementById('savePeopleBtn').addEventListener('click', getPeople);
 document.getElementById('saveTipBtn').addEventListener('click', getTip);
