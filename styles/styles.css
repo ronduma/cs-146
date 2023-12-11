@@ -72,6 +72,10 @@ td, th {
   display:none
 }
 
+.container.addTip{
+  display:none
+}
+
 /* result.html */
 .result{
   margin:10px;

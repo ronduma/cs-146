@@ -19,9 +19,14 @@ populateStatesDropdown();
 function prepareDataAndSubmit() {
   const selectedType = document.getElementById("type").value;
   const selectedState = document.getElementById("state").value;
+  let form = document.getElementById('form');
 
   console.log(selectedType, selectedState)
 
+  if (selectedType === "By Meal"){
+    form.action = 'breakdown.html'
+  }
+
   // Submit the form
-  document.querySelector('form').submit();
+  form.submit();
 }
