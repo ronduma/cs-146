@@ -47,7 +47,6 @@ function getPeople() {
   let peopleInput = document.getElementById('people');
   let peopleList = peopleInput.value.split(/[,\s]+/);
   // Update dropdowns with the new peopleList
-  updateDropdowns(peopleList);
   // loopTable(); 
   return peopleList;
 }
@@ -65,7 +64,7 @@ function toggleTip() {
 // Function to handle adding a person
 function getTip() {
   let tipInput = document.getElementById('tip');
-  return tipInput.value ? tipInput.value : 0;
+  return tipInput.value ? parseFloat(tipInput.value) : 0;
 }
 
 let itemCount = 0;
@@ -84,13 +83,11 @@ function addItem() {
   let cell1 = newRow.insertCell(0); // Leave the first cell empty if needed
   let cell2 = newRow.insertCell(1);
   let cell3 = newRow.insertCell(2);
-  let cell4 = newRow.insertCell(3);
 
   // Set content for the cells (you can replace these with your actual values)
   cell1.textContent = ''; // Empty first cell
   cell2.appendChild(createInput('text', 'itemName', itemCount)); // Text input for Item Name
   cell3.appendChild(createInput('number', 'price', itemCount)); // Text input for Price
-  cell4.appendChild(createDropdown('dropdown', itemCount)); // Text input for Person
 }
 
 // Function to create an input element
@@ -102,44 +99,8 @@ function createInput(type, name, id) {
   return input;
 }
 
-// Function to create a dropdown/select element
-function createDropdown(name, id) {
-  let select = document.createElement('select');
-  select.id = name;
-  select.id = name + id;
-  // Options for the dropdown
-  let options = getPeople();
-
-  // Loop through options and create option elements
-  options.forEach(function(option) {
-    let opt = document.createElement('option');
-    opt.value = option;
-    opt.text = option;
-    select.appendChild(opt);
-  });
-
-  return select;
-}
-
-// Function to update the dropdowns in all cell4s
-function updateDropdowns(peopleList) {
-  let allDropdowns = document.querySelectorAll('select'); // Get all dropdowns in the table
-
-  allDropdowns.forEach(function(dropdown) {
-    dropdown.innerHTML = ''; // Clear existing options
-
-    // Loop through the updated peopleList and create option elements
-    peopleList.forEach(function(option) {
-      let opt = document.createElement('option');
-      opt.value = option;
-      opt.text = option;
-      dropdown.appendChild(opt);
-    });
-  });
-}
-
 function loopTable(){
-  let values = [];
+  let total = 0;
   let table = document.getElementById('table');
   let rows = table.getElementsByTagName('tr');
 
@@ -147,44 +108,26 @@ function loopTable(){
   for (let i = 1; i < rows.length; i++) {
     let cells = rows[i].getElementsByTagName('td');
     // Iterate through each cell in the row
-    let val = {
-      "itemName" : cells[1].querySelector('input').value,
-      "price" : parseFloat(cells[2].querySelector('input').value),
-      "person" : cells[3].querySelector('select').value
-    };
-    values.push(val)
+    total += parseFloat(cells[2].querySelector('input').value);
   }
-  return values;
+  return total;
 }
 
-function byPerson(){
-  let values = loopTable();
+function even(){
+  let total = loopTable();
   let tip = getTip();
-  let personMap = {};
   let tax = getTaxRate(state);
-  console.log("tax", tax)
-  for (let i = 0; i < values.length; i++){
-    if (!personMap[values[i].person]){
-      personMap[values[i].person] = {};
-      personMap[values[i].person].price = values[i].price;
-    } else{
-      personMap[values[i].person].price += values[i].price;
-    }
-  }
-
-  for (let person in personMap) {
-    personMap[person].price += parseFloat(tip) / parseFloat(Object.keys(personMap).length)
-    personMap[person].price *= getTaxRate(state)
-    personMap[person].price = personMap[person].price.toFixed(2);
-  }
-  console.log(personMap)
-  localStorage.setItem('personMap', JSON.stringify(personMap));
+  total *= tax;
+  total += tip;
+  total /= getPeople().length.toFixed(2);
+  localStorage.setItem('total', total);
+  localStorage.setItem('splitType', "Even");
   window.location.href = './result.html';
 }
 
 document.getElementById('addPersonBtn').addEventListener('click', togglePeopleList);
 document.getElementById('addItemBtn').addEventListener('click', addItem);
 document.getElementById('addTipBtn').addEventListener('click', toggleTip);
-document.getElementById('submitBtn').addEventListener('click', byPerson);
+document.getElementById('submitBtn').addEventListener('click', even);
 document.getElementById('savePeopleBtn').addEventListener('click', getPeople);
 document.getElementById('saveTipBtn').addEventListener('click', getTip);
